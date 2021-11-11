@@ -1,0 +1,6 @@
+
+class Pattern
+{
+  public:
+    Pattern();
+};

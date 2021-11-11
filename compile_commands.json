@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/elihermann/School/c++/conwaysGameOfLife/build",
+  "command": "/usr/bin/g++    -mmacosx-version-min=11.6 -Wall -Wextra -pedantic -std=gnu++2a -o CMakeFiles/conwaysGameOfLife.dir/Pattern.cpp.o -c /Users/elihermann/School/c++/conwaysGameOfLife/Pattern.cpp",
+  "file": "/Users/elihermann/School/c++/conwaysGameOfLife/Pattern.cpp"
+},
+{
+  "directory": "/Users/elihermann/School/c++/conwaysGameOfLife/build",
+  "command": "/usr/bin/g++    -mmacosx-version-min=11.6 -Wall -Wextra -pedantic -std=gnu++2a -o CMakeFiles/conwaysGameOfLife.dir/main.cpp.o -c /Users/elihermann/School/c++/conwaysGameOfLife/main.cpp",
+  "file": "/Users/elihermann/School/c++/conwaysGameOfLife/main.cpp"
+}
+]
