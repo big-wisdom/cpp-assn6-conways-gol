@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Pattern.hpp"
+#include <vector>
 
 class LifeSimulator
 {
@@ -16,4 +17,5 @@ class LifeSimulator
   private:
     std::uint8_t width;
     std::uint8_t height;
+    std::vector<std::vector<bool>> world;
 };
