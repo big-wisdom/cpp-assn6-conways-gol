@@ -8,9 +8,14 @@ set(PROJECT_NAME conwaysGameOfLife)
 project(${PROJECT_NAME} CXX)
 
 set(HEADER_FILES
+    LifeSimulator.hpp
+    Renderer.hpp
+    RendererConsole.hpp
     Pattern.hpp)
 
 set(SOURCE_FILES
+    LifeSimulator.cpp
+    RendererConsole.cpp
     Pattern.cpp)
 
 #set(UNIT_TEST_FILES
