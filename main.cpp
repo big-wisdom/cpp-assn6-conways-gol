@@ -3,11 +3,12 @@
 #include <thread>
 #include "RendererConsole.hpp"
 #include "LifeSimulator.hpp"
+#include "rlutil.h"
 
 int main()
 {
     // initialize LifeSimulator
-    LifeSimulator ls(5, 5);
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
     // initialize some renderer
     RendererConsole rc;
     // run render
