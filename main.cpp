@@ -19,7 +19,8 @@ int main()
     while(true)
     {
         rc.render(ls);
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        ls.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(700));
     }
     return 0;
 }
