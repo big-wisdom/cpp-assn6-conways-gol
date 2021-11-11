@@ -19,6 +19,20 @@ LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
     }
 }
 
+void LifeSimulator::insertPattern(const Pattern& pattern, std::uint8_t startX, std::uint8_t startY)
+{
+    auto p_width = pattern.getSizeX();
+    auto p_height = pattern.getSizeY();
+    for(decltype(p_height) y=0; y<p_height; y++)
+    {
+        for(decltype(p_width) x=0; x<p_width; x++)
+        {
+            // I STILL NEED TO ACCOUNT FOR WORLD EDGES
+            world[y+startY][x+startX] = pattern.getCell(x, y);
+        }
+    }
+}
+
 bool LifeSimulator::getCell(std::uint8_t x, std::uint8_t y) const
 {
     return world[y][x];

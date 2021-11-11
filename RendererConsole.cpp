@@ -13,7 +13,7 @@ void RendererConsole::render(const LifeSimulator& simulation)
         for(decltype(width) x=1; x<width; x++)
         {
             rlutil::locate(x, y);
-            if(!simulation.getCell(x, y))
+            if(simulation.getCell(x, y))
                 rlutil::setChar('x');
         }
     }
