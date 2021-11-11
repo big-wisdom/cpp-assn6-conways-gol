@@ -11,11 +11,13 @@ set(HEADER_FILES
     LifeSimulator.hpp
     Renderer.hpp
     RendererConsole.hpp
+    PatternGlider.hpp
     Pattern.hpp)
 
 set(SOURCE_FILES
     LifeSimulator.cpp
     RendererConsole.cpp
+    PatternGlider.cpp
     Pattern.cpp)
 
 #set(UNIT_TEST_FILES
