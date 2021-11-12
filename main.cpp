@@ -7,14 +7,16 @@
 #include "Pattern.hpp"
 #include "PatternGlider.hpp"
 #include "testPattern.hpp"
+#include "Acorn.hpp"
 
 int main()
 {
     // initialize LifeSimulator
     LifeSimulator ls(rlutil::tcols(), rlutil::trows());
     //PatternGlider glider;
-    TestPattern tp;
-    ls.insertPattern(tp, 0, 0);
+    //TestPattern tp;
+    Acorn acorn;
+    ls.insertPattern(acorn, 40, 15);
     // initialize some renderer
     RendererConsole rc;
     // run render
@@ -22,7 +24,7 @@ int main()
     {
         rc.render(ls);
         ls.update();
-        std::this_thread::sleep_for(std::chrono::milliseconds(700));
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     return 0;
 }
