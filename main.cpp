@@ -8,6 +8,7 @@
 #include "PatternGlider.hpp"
 #include "testPattern.hpp"
 #include "Acorn.hpp"
+#include "Block.hpp"
 
 int main()
 {
@@ -15,8 +16,9 @@ int main()
     LifeSimulator ls(rlutil::tcols(), rlutil::trows());
     //PatternGlider glider;
     //TestPattern tp;
-    Acorn acorn;
-    ls.insertPattern(acorn, 40, 15);
+    //Acorn acorn;
+    Block block;
+    ls.insertPattern(block, 5, 5);
     // initialize some renderer
     RendererConsole rc;
     // run render
