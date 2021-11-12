@@ -7,9 +7,9 @@
 #include "Pattern.hpp"
 #include "PatternGlider.hpp"
 #include "testPattern.hpp"
-#include "Acorn.hpp"
-#include "Block.hpp"
-#include "Blinker.hpp"
+#include "PatternAcorn.hpp"
+#include "PatternBlock.hpp"
+#include "PatternBlinker.hpp"
 #include "PatternGosperGliderGun.hpp"
 
 int main()

@@ -3,16 +3,15 @@ cmake_minimum_required(VERSION 3.12)
 #
 # Manually specifying all the source files.
 #
-set(PROJECT_NAME conwaysGameOfLife)
+set(PROJECT_NAME ConwaysLife)
 # set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 project(${PROJECT_NAME} CXX)
 
 set(HEADER_FILES
     PatternGosperGliderGun.hpp
-    Blinker.hpp
-    Block.hpp
-    Acorn.hpp
-    testPattern.hpp
+    PatternBlinker.hpp
+    PatternBlock.hpp
+    PatternAcorn.hpp
     LifeSimulator.hpp
     Renderer.hpp
     RendererConsole.hpp
@@ -21,10 +20,9 @@ set(HEADER_FILES
 
 set(SOURCE_FILES
     PatternGosperGliderGun.cpp
-    Blinker.cpp
-    Block.cpp
-    Acorn.cpp
-    testPattern.cpp
+    PatternBlinker.cpp
+    PatternBlock.cpp
+    PatternAcorn.cpp
     LifeSimulator.cpp
     RendererConsole.cpp
     PatternGlider.cpp
