@@ -1,10 +1,10 @@
 #include "Pattern.hpp"
 #include <vector>
 
-class Acorn:public Pattern
+class PatternAcorn:public Pattern
 {
   public:
-    Acorn();
+    PatternAcorn();
     std::uint8_t getSizeX() const;
     std::uint8_t getSizeY() const;
     bool getCell(std::uint8_t x, std::uint8_t y) const;

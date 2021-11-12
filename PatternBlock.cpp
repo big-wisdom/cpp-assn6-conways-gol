@@ -1,8 +1,8 @@
 #include "PatternBlock.hpp"
 
 PatternBlock::PatternBlock():pattern({
-        {0,1},
-        {0,0}
+        {1,1},
+        {1,1}
 }){}
 
 std::uint8_t PatternBlock::getSizeX() const {return 2;}

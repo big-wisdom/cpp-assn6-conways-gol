@@ -12,25 +12,82 @@
 #include "PatternBlinker.hpp"
 #include "PatternGosperGliderGun.hpp"
 
-int main()
-{
-    // initialize LifeSimulator
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
-    //PatternGlider glider;
-    //TestPattern tp;
-    //Acorn acorn;
-    //Block block;
-    //Blinker b;
-    PatternGosperGliderGun gliderGun;
-    ls.insertPattern(gliderGun, 10, 10);
-    // initialize some renderer
+void demonstrateGliderGun(){
     RendererConsole rc;
-    // run render
-    while(true)
+    PatternGosperGliderGun gliderGun;
+
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    ls.insertPattern(gliderGun, 10, 10);
+    for(int i=0; i<100; i++)
     {
         rc.render(ls);
         ls.update();
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
+}
+
+void demonstrateBlock(){
+    RendererConsole rc;
+    PatternBlock gliderGun;
+
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    ls.insertPattern(gliderGun, 10, 10);
+    for(int i=0; i<20; i++)
+    {
+        rc.render(ls);
+        ls.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+
+void demonstrateAcorn(){
+    RendererConsole rc;
+    PatternAcorn gliderGun;
+
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    ls.insertPattern(gliderGun, 10, 10);
+    for(int i=0; i<100; i++)
+    {
+        rc.render(ls);
+        ls.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+
+void demonstrateBlinker(){
+    RendererConsole rc;
+    PatternBlinker gliderGun;
+
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    ls.insertPattern(gliderGun, 10, 10);
+    for(int i=0; i<20; i++)
+    {
+        rc.render(ls);
+        ls.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+
+void demonstrateGlider(){
+    RendererConsole rc;
+    PatternGlider gliderGun;
+
+    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    ls.insertPattern(gliderGun, 10, 10);
+    for(int i=0; i<50; i++)
+    {
+        rc.render(ls);
+        ls.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+
+int main()
+{
+    demonstrateGliderGun();
+    demonstrateAcorn();
+    demonstrateBlinker();
+    demonstrateBlock();
+    demonstrateGlider();
     return 0;
 }
