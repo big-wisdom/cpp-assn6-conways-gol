@@ -10,6 +10,7 @@
 #include "Acorn.hpp"
 #include "Block.hpp"
 #include "Blinker.hpp"
+#include "GosperGliderGun.hpp"
 
 int main()
 {
@@ -19,8 +20,9 @@ int main()
     //TestPattern tp;
     //Acorn acorn;
     //Block block;
-    Blinker b;
-    ls.insertPattern(b, 5, 5);
+    //Blinker b;
+    GosperGliderGun gliderGun;
+    ls.insertPattern(gliderGun, 10, 10);
     // initialize some renderer
     RendererConsole rc;
     // run render
