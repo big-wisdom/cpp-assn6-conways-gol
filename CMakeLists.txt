@@ -8,6 +8,7 @@ set(PROJECT_NAME conwaysGameOfLife)
 project(${PROJECT_NAME} CXX)
 
 set(HEADER_FILES
+    testPattern.hpp
     LifeSimulator.hpp
     Renderer.hpp
     RendererConsole.hpp
@@ -15,6 +16,7 @@ set(HEADER_FILES
     Pattern.hpp)
 
 set(SOURCE_FILES
+    testPattern.cpp
     LifeSimulator.cpp
     RendererConsole.cpp
     PatternGlider.cpp

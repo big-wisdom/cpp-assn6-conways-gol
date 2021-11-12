@@ -6,13 +6,15 @@
 #include "rlutil.h"
 #include "Pattern.hpp"
 #include "PatternGlider.hpp"
+#include "testPattern.hpp"
 
 int main()
 {
     // initialize LifeSimulator
     LifeSimulator ls(rlutil::tcols(), rlutil::trows());
-    PatternGlider glider;
-    ls.insertPattern(glider, 5, 5);
+    //PatternGlider glider;
+    TestPattern tp;
+    ls.insertPattern(tp, 0, 0);
     // initialize some renderer
     RendererConsole rc;
     // run render

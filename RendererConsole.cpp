@@ -8,11 +8,11 @@ void RendererConsole::render(const LifeSimulator& simulation)
     // go through all living cells and use rlutil::setChar to draw them
     auto height = simulation.getSizeY();
     auto width = simulation.getSizeX();
-    for(decltype(height) y=1; y<height; y++)
+    for(decltype(height) y=0; y<height; y++)
     {
-        for(decltype(width) x=1; x<width; x++)
+        for(decltype(width) x=0; x<width; x++)
         {
-            rlutil::locate(x, y);
+            rlutil::locate(x+1, y+1);
             if(simulation.getCell(x, y))
                 rlutil::setChar('x');
         }

@@ -24,12 +24,12 @@ std::uint8_t getNumberNeighbors(std::uint8_t x, std::uint8_t y, std::vector<std:
 {
     // account for boundaries
     std::uint8_t total = 0;
-    std::uint8_t left = 0 ? x == 0 : x-1;
-    std::uint8_t right = std::min<std::uint8_t>(width, x);
-    std::uint8_t top = 0 ? y == 0 : y-1;
-    std::uint8_t bottom = std::min<std::uint8_t>(height, y);
+    std::uint8_t left = x == 0 ? 0 : x-1;
+    std::uint8_t right = std::min<std::uint8_t>(width-1, x+1);
+    std::uint8_t top = y == 0 ? 0 : y-1;
+    std::uint8_t bottom = std::min<std::uint8_t>(height-1, y+1);
     //std::cout << "height: " << static_cast<int>(height) << std::endl;
-    //std::cout << static_cast<int>(x) << "," << static_cast<int>(y) << std::endl;
+    //std::cout << "Checking around: " << static_cast<int>(x) << "," << static_cast<int>(y) << std::endl;
     //std::cout << "x: " << static_cast<int>(left) << "-" << static_cast<int>(right) << std::endl;
     //std::cout << "y: " << static_cast<int>(top) << "-" << static_cast<int>(bottom) << std::endl << std::endl;
 
@@ -37,7 +37,8 @@ std::uint8_t getNumberNeighbors(std::uint8_t x, std::uint8_t y, std::vector<std:
     {
         for(std::uint8_t ry = top; ry <= bottom; ry++)
         {
-            if(ry!=y && rx!=x && world[ry][rx]) total++;
+            // std::cout << "Checking: " << static_cast<int>(rx) << " , "  <<static_cast<int>(ry) << std::endl;
+            if(!(ry==y && rx==x) && world[ry][rx]) total++;
         }
     }
     return total;
@@ -53,20 +54,30 @@ void LifeSimulator::update()
             std::int8_t neighbors = getNumberNeighbors(x, y, world, width, height);
             if(world[y][x]) // if living
             {
+                // std::cout << static_cast<int>(x) << ", " << static_cast<int>(y) << " Is Alive";
                 if(neighbors < 2 || neighbors > 3) // if under or over populated
                 {
                     changeList.push_back(std::make_pair(x,y));
+                    // std::cout << " and dies today because it has " << static_cast<int>(neighbors) << std::endl;
+                }
+                else 
+                {
+                    // std::cout << " and lives because it has " << static_cast<int>(neighbors) << " neighbors" << std::endl;
                 }
             }
             else // if dead
             {
-                changeList.push_back(std::make_pair(x,y));
+                if(neighbors == 3)
+                    changeList.push_back(std::make_pair(x,y));
             }
         }
     }
 
+    //std::cout << "Update List" << std::endl;
     for(std::pair<std::uint8_t, std::uint8_t> coord : changeList)
+    //for(decltype(changeList.size()) i=0; i<changeList.size(); i++)
     {
+        //std::cout << static_cast<int>(coord.first) << ", " << static_cast<int>(coord.second) << std::endl;
         world[coord.second][coord.first] = !world[coord.second][coord.first];
     }
 }
