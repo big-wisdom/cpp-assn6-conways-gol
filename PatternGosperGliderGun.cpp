@@ -1,6 +1,6 @@
-#include "GosperGliderGun.hpp"
+#include "PatternGosperGliderGun.hpp"
 
-GosperGliderGun::GosperGliderGun():pattern({
+PatternGosperGliderGun::PatternGosperGliderGun():pattern({
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
@@ -12,9 +12,9 @@ GosperGliderGun::GosperGliderGun():pattern({
         {0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 }){}
 
-std::uint8_t GosperGliderGun::getSizeX() const {return 36;}
-std::uint8_t GosperGliderGun::getSizeY() const {return 9;}
-bool GosperGliderGun::getCell(std::uint8_t x, std::uint8_t y) const
+std::uint8_t PatternGosperGliderGun::getSizeX() const {return 36;}
+std::uint8_t PatternGosperGliderGun::getSizeY() const {return 9;}
+bool PatternGosperGliderGun::getCell(std::uint8_t x, std::uint8_t y) const
 {
     return pattern[y][x];
 }

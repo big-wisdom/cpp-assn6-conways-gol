@@ -8,7 +8,7 @@ set(PROJECT_NAME conwaysGameOfLife)
 project(${PROJECT_NAME} CXX)
 
 set(HEADER_FILES
-    GosperGliderGun.hpp
+    PatternGosperGliderGun.hpp
     Blinker.hpp
     Block.hpp
     Acorn.hpp
@@ -20,7 +20,7 @@ set(HEADER_FILES
     Pattern.hpp)
 
 set(SOURCE_FILES
-    GosperGliderGun.cpp
+    PatternGosperGliderGun.cpp
     Blinker.cpp
     Block.cpp
     Acorn.cpp
