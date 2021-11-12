@@ -9,6 +9,7 @@
 #include "testPattern.hpp"
 #include "Acorn.hpp"
 #include "Block.hpp"
+#include "Blinker.hpp"
 
 int main()
 {
@@ -17,8 +18,9 @@ int main()
     //PatternGlider glider;
     //TestPattern tp;
     //Acorn acorn;
-    Block block;
-    ls.insertPattern(block, 5, 5);
+    //Block block;
+    Blinker b;
+    ls.insertPattern(b, 5, 5);
     // initialize some renderer
     RendererConsole rc;
     // run render
