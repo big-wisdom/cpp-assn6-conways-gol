@@ -12,10 +12,10 @@ set(HEADER_FILES
     PatternBlinker.hpp
     PatternBlock.hpp
     PatternAcorn.hpp
+    PatternGlider.hpp
     LifeSimulator.hpp
     Renderer.hpp
     RendererConsole.hpp
-    PatternGlider.hpp
     Pattern.hpp)
 
 set(SOURCE_FILES
@@ -23,9 +23,9 @@ set(SOURCE_FILES
     PatternBlinker.cpp
     PatternBlock.cpp
     PatternAcorn.cpp
+    PatternGlider.cpp
     LifeSimulator.cpp
     RendererConsole.cpp
-    PatternGlider.cpp
     Pattern.cpp)
 
 #set(UNIT_TEST_FILES

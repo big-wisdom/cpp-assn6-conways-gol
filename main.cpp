@@ -12,11 +12,11 @@
 #include "PatternBlinker.hpp"
 #include "PatternGosperGliderGun.hpp"
 
-void demonstrateGliderGun(){
+void demonstrateGliderGun(std::uint8_t cols, std::uint8_t rows){
     RendererConsole rc;
     PatternGosperGliderGun gliderGun;
 
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    LifeSimulator ls(cols, rows);
     ls.insertPattern(gliderGun, 10, 10);
     for(int i=0; i<100; i++)
     {
@@ -26,11 +26,11 @@ void demonstrateGliderGun(){
     }
 }
 
-void demonstrateBlock(){
+void demonstrateBlock(std::uint8_t cols, std::uint8_t rows){
     RendererConsole rc;
     PatternBlock gliderGun;
 
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    LifeSimulator ls(cols, rows);
     ls.insertPattern(gliderGun, 10, 10);
     for(int i=0; i<20; i++)
     {
@@ -40,11 +40,11 @@ void demonstrateBlock(){
     }
 }
 
-void demonstrateAcorn(){
+void demonstrateAcorn(std::uint8_t cols, std::uint8_t rows){
     RendererConsole rc;
     PatternAcorn gliderGun;
 
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    LifeSimulator ls(cols, rows);
     ls.insertPattern(gliderGun, 10, 10);
     for(int i=0; i<100; i++)
     {
@@ -54,11 +54,11 @@ void demonstrateAcorn(){
     }
 }
 
-void demonstrateBlinker(){
+void demonstrateBlinker(std::uint8_t cols, std::uint8_t rows){
     RendererConsole rc;
     PatternBlinker gliderGun;
 
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    LifeSimulator ls(cols, rows);
     ls.insertPattern(gliderGun, 10, 10);
     for(int i=0; i<20; i++)
     {
@@ -68,11 +68,11 @@ void demonstrateBlinker(){
     }
 }
 
-void demonstrateGlider(){
+void demonstrateGlider(std::uint8_t cols, std::uint8_t rows){
     RendererConsole rc;
     PatternGlider gliderGun;
 
-    LifeSimulator ls(rlutil::tcols(), rlutil::trows());
+    LifeSimulator ls(cols, rows);
     ls.insertPattern(gliderGun, 10, 10);
     for(int i=0; i<50; i++)
     {
@@ -84,10 +84,12 @@ void demonstrateGlider(){
 
 int main()
 {
-    demonstrateGliderGun();
-    demonstrateAcorn();
-    demonstrateBlinker();
-    demonstrateBlock();
-    demonstrateGlider();
+    std::uint8_t cols = static_cast<std::uint8_t>(rlutil::tcols());
+    std::uint8_t rows = static_cast<std::uint8_t>(rlutil::trows());
+    demonstrateGliderGun(cols, rows);
+    demonstrateAcorn(cols, rows);
+    demonstrateBlinker(cols, rows);
+    demonstrateBlock(cols, rows);
+    demonstrateGlider(cols, rows);
     return 0;
 }
